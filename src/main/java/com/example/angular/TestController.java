@@ -5,17 +5,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 
 
 @RestController
 public class TestController {
 
     @Autowired
-    TutorialServiceInterface tutorialService;
+    TutorialServiceMockImpl tutorialService;
 
     @GetMapping("/")
     public String getDefaultString() {
@@ -27,7 +26,6 @@ public class TestController {
     public ResponseEntity<TutorialPage> getAllTutorialsWithPage(@RequestParam(required = false) Integer page,
                                                                 Integer size) {
         String title = "";
-//        return new ResponseEntity<>(tutorialService.getAllTutorials(title), HttpStatus.OK);
         List<Tutorial> tutorials = tutorialService.getAllTutorials(title);
         TutorialPage tutorialPage = new TutorialPage();
         tutorialPage.setTotalPages(1);

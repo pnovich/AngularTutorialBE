@@ -11,5 +11,5 @@ public interface TutorialServiceInterface {
     Tutorial updateTutorial(long id, Tutorial tutorial);
     Tutorial deleteTutorial(long id);
     List<Tutorial> deleteAllTutorials();
-    List<Tutorial> findByPublished();
+//    List<Tutorial> findByPublished();
 }

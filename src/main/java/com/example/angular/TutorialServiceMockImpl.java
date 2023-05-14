@@ -5,11 +5,10 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Component
-public class TutorialService implements TutorialServiceInterface{
+public class TutorialServiceMockImpl implements TutorialServiceInterface{
     List<Tutorial> tutorialsList = new ArrayList<>();
     @PostConstruct
     public void initService() {
@@ -64,7 +63,7 @@ public class TutorialService implements TutorialServiceInterface{
         return tutorialsList;
     }
 
-    @Override
+//    @Override
     public List<Tutorial> findByPublished() {
         List<Tutorial> tutorials = new ArrayList<>();
         for (Tutorial tutorial : tutorialsList){
