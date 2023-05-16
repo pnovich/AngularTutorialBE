@@ -1,7 +1,12 @@
 package com.example.angular.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Tutorial {
 
+    @Id
     private long id;
 
     private String title;
@@ -15,6 +20,9 @@ public class Tutorial {
         this.title = title;
         this.description = description;
         this.published = published;
+    }
+
+    public Tutorial() {
     }
 
     public long getId() {
