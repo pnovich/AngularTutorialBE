@@ -1,5 +1,8 @@
 package com.example.angular.model;
 
+import org.springframework.data.redis.core.RedisHash;
+
+@RedisHash("Tutorial")
 public class Tutorial {
 
     private long id;
@@ -15,6 +18,9 @@ public class Tutorial {
         this.title = title;
         this.description = description;
         this.published = published;
+    }
+
+    public Tutorial() {
     }
 
     public long getId() {
